@@ -1,0 +1,15 @@
+# Deno
+deno.lock
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Editor
+.vscode/
+.DS_Store
+
+# Environment
+.env
+.env.local
