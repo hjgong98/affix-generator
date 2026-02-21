@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop Generator · TinyGen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>☕ COFFEE SHOP GENERATOR</h1>
+            <p class="subtitle">craft your perfect (or chaotic) order</p>
+        </header>
+
+        <main>
+            <div class="controls-card">
+                <h2>⚙️ parameters</h2>
+                
+                <div class="control-group">
+                    <label for="styleSlider">
+                        <span>classic → unique</span>
+                        <span id="styleValue" class="value-badge">medium roast</span>
+                    </label>
+                    <input type="range" id="styleSlider" min="0" max="100" value="40" step="1">
+                    <div class="slider-labels">
+                        <span>basic coffee</span>
+                        <span>single origin</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="pointsSlider">
+                        <span>total points to spend</span>
+                        <span id="pointsValue" class="value-badge">12 pts</span>
+                    </label>
+                    <input type="range" id="pointsSlider" min="5" max="30" value="12" step="1">
+                    <div class="slider-labels">
+                        <span>simple order</span>
+                        <span>extra everything</span>
+                    </div>
+                </div>
+
+                <div class="control-row">
+                    <div class="control-group half">
+                        <label for="sugarSlider">
+                            <span>🍬 sugar level</span>
+                            <span id="sugarValue" class="value-badge">light</span>
+                        </label>
+                        <input type="range" id="sugarSlider" min="0" max="3" value="1" step="1">
+                        <div class="slider-labels mini">
+                            <span>none</span>
+                            <span>light</span>
+                            <span>medium</span>
+                            <span>extra</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group half">
+                        <label for="caffeineSlider">
+                            <span>⚡ caffeine level</span>
+                            <span id="caffeineValue" class="value-badge">regular</span>
+                        </label>
+                        <input type="range" id="caffeineSlider" min="0" max="3" value="1" step="1">
+                        <div class="slider-labels mini">
+                            <span>decaf</span>
+                            <span>regular</span>
+                            <span>extra shot</span>
+                            <span>triple</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group checkbox-group">
+                    <label for="dairyFree">
+                        <input type="checkbox" id="dairyFree">
+                        <span>🌱 dairy free (oat/almond/soy only)</span>
+                    </label>
+                </div>
+
+                <button id="generateBtn" class="generate-btn">✨ brew new order</button>
+            </div>
+
+            <div class="output-card">
+                <h2>☕ your order</h2>
+                <div id="orderDisplay" class="order-display">
+                    <p class="placeholder">adjust parameters and generate →</p>
+                </div>
+                <div id="pointsBreakdown" class="points-breakdown"></div>
+                
+                <div class="history-section">
+                    <h3>📋 recent orders</h3>
+                    <div id="historyList" class="history-list">
+                        <!-- history items appear here -->
+                    </div>
+                    <button id="clearHistoryBtn" class="clear-btn">clear history</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>tiny generator · coffee shop affix system</p>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
