@@ -1,122 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Shop Generator · TinyGen</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>☕ COFFEE SHOP GENERATOR</h1>
-            <p class="subtitle">craft your perfect (or chaotic) order</p>
-        </header>
+      <header>
+        <h1>☕ COFFEE SHOP GENERATOR</h1>
+        <p class="subtitle">craft your perfect (or chaotic) order</p>
+      </header>
 
-        <main>
-            <div class="controls-card">
-                <h2>⚙️ build your drink</h2>
-                
-                <div class="control-group">
-                    <label for="typeSlider">
-                        <span>🥤 drink type</span>
-                        <span id="typeValue" class="value-badge">classic</span>
-                    </label>
-                    <input type="range" id="typeSlider" min="0" max="100" value="40" step="1">
-                    <div class="slider-labels">
-                        <span>classic</span>
-                        <span>blends</span>
-                        <span>premium</span>
-                        <span>unique</span>
-                        <span>wildcard</span>
-                    </div>
-                </div>
+      <main>
+        <div class="controls-card">
+          <h2>⚙️ build your drink</h2>
 
-                <div class="control-row">
-                    <div class="control-group half">
-                        <label for="sugarSlider">
-                            <span>🍬 sugar level</span>
-                            <span id="sugarValue" class="value-badge">light</span>
-                        </label>
-                        <input type="range" id="sugarSlider" min="0" max="4" value="1" step="1">
-                        <div class="slider-labels">
-                            <span>none</span>
-                            <span>light</span>
-                            <span>medium</span>
-                            <span>extra</span>
-                            <span>go ham</span>
-                        </div>
-                    </div>
+          <div class="control-group">
+            <label for="typeSlider">
+              <span>🥤 drink type</span>
+              <span id="typeValue" class="value-badge">classic</span>
+            </label>
+            <input
+              type="range"
+              id="typeSlider"
+              min="0"
+              max="100"
+              value="40"
+              step="1"
+            >
+            <div class="slider-labels">
+              <span>classic</span>
+              <span>blends</span>
+              <span>premium</span>
+              <span>unique</span>
+              <span>wildcard</span>
+            </div>
+          </div>
 
-                    <div class="control-group half">
-                        <label for="caffeineSlider">
-                            <span>⚡ caffeine level</span>
-                            <span id="caffeineValue" class="value-badge">single</span>
-                        </label>
-                        <input type="range" id="caffeineSlider" min="0" max="4" value="1" step="1">
-                        <div class="slider-labels">
-                            <span>none</span>
-                            <span>single</span>
-                            <span>double</span>
-                            <span>triple</span>
-                            <span>go ham</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="control-row">
-                    <div class="control-group half">
-                        <label for="toppingsSlider">
-                            <span>🍦 toppings level</span>
-                            <span id="toppingsValue" class="value-badge">one</span>
-                        </label>
-                        <input type="range" id="toppingsSlider" min="0" max="4" value="1" step="1">
-                        <div class="slider-labels">
-                            <span>none</span>
-                            <span>one</span>
-                            <span>two</span>
-                            <span>three</span>
-                            <span>go ham</span>
-                        </div>
-                    </div>
-
-                    <!-- Toggles side by side -->
-                    <div class="control-group half toggles-container">
-                        <label for="dairyFree" class="toggle-label">
-                            <input type="checkbox" id="dairyFree">
-                            <span>🌱 dairy free</span>
-                        </label>
-                        <label for="sugarFree" class="toggle-label">
-                            <input type="checkbox" id="sugarFree">
-                            <span>🍬 sugar free</span>
-                        </label>
-                    </div>
-                </div>
-
-                <button id="generateBtn" class="generate-btn">✨ brew my drink</button>
+          <div class="control-row">
+            <div class="control-group half">
+              <label for="sugarSlider">
+                <span>🍬 sugar level</span>
+                <span id="sugarValue" class="value-badge">light</span>
+              </label>
+              <input
+                type="range"
+                id="sugarSlider"
+                min="0"
+                max="4"
+                value="1"
+                step="1"
+              >
+              <div class="slider-labels">
+                <span>none</span>
+                <span>light</span>
+                <span>medium</span>
+                <span>extra</span>
+                <span>go ham</span>
+              </div>
             </div>
 
-            <div class="output-card">
-                <h2>☕ your order</h2>
-                <div id="orderDisplay" class="order-display">
-                    <p class="placeholder">adjust parameters and generate →</p>
-                </div>
-                
-                <div class="history-section">
-                    <h3>📋 recent orders</h3>
-                    <div id="historyList" class="history-list">
-                        <!-- history items appear here -->
-                    </div>
-                    <button id="clearHistoryBtn" class="clear-btn">clear history</button>
-                </div>
+            <div class="control-group half">
+              <label for="caffeineSlider">
+                <span>⚡ caffeine level</span>
+                <span id="caffeineValue" class="value-badge">single</span>
+              </label>
+              <input
+                type="range"
+                id="caffeineSlider"
+                min="0"
+                max="4"
+                value="1"
+                step="1"
+              >
+              <div class="slider-labels">
+                <span>none</span>
+                <span>single</span>
+                <span>double</span>
+                <span>triple</span>
+                <span>go ham</span>
+              </div>
             </div>
-        </main>
+          </div>
 
-        <footer>
-            <p>tiny generator · coffee shop affix system</p>
-        </footer>
+          <div class="control-row">
+            <div class="control-group half">
+              <label for="toppingsSlider">
+                <span>🍦 toppings level</span>
+                <span id="toppingsValue" class="value-badge">one</span>
+              </label>
+              <input
+                type="range"
+                id="toppingsSlider"
+                min="0"
+                max="4"
+                value="1"
+                step="1"
+              >
+              <div class="slider-labels">
+                <span>none</span>
+                <span>one</span>
+                <span>two</span>
+                <span>three</span>
+                <span>go ham</span>
+              </div>
+            </div>
+
+            <!-- Toggles side by side -->
+            <div class="control-group half toggles-container">
+              <label for="dairyFree" class="toggle-label">
+                <input type="checkbox" id="dairyFree">
+                <span>🌱 dairy free</span>
+              </label>
+              <label for="sugarFree" class="toggle-label">
+                <input type="checkbox" id="sugarFree">
+                <span>🍬 sugar free</span>
+              </label>
+            </div>
+          </div>
+
+          <button id="generateBtn" class="generate-btn">
+            ✨ brew my drink
+          </button>
+        </div>
+
+        <div class="output-card">
+          <h2>☕ your order</h2>
+          <div id="orderDisplay" class="order-display">
+            <p class="placeholder">adjust parameters and generate →</p>
+          </div>
+
+          <div class="history-section">
+            <h3>📋 recent orders</h3>
+            <div id="historyList" class="history-list">
+              <!-- history items appear here -->
+            </div>
+            <button id="clearHistoryBtn" class="clear-btn">
+              clear history
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>tiny generator · coffee shop affix system</p>
+      </footer>
     </div>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
