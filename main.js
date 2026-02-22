@@ -387,7 +387,6 @@ function generateDrink() {
     if ((isCoffee || isTea) && !isBlended && Math.random() > 0.3) {
         const hasMilkInName = 
             base.name.includes("milk") || 
-            base.name.includes("almondmilk") || 
             base.name.includes("latte") ||
             base.name.includes("flat white") ||
             base.name.includes("cappuccino") ||
@@ -403,12 +402,12 @@ function generateDrink() {
             }
         } else if (dairyFree) {
             const baseHasDairyMilk = 
-                (base.name.includes("milk") && !base.name.includes("almond") && !base.name.includes("oat") && !base.name.includes("soy") && !base.name.includes("coconut")) ||
+                (base.name.includes("milk") ||
                 base.name.includes("latte") ||
                 base.name.includes("flat white") ||
                 base.name.includes("cappuccino") ||
                 base.name.includes("cortado") ||
-                base.name.includes("macchiato");
+                base.name.includes("macchiato"));
             
             if (baseHasDairyMilk) {
                 const dairyFreeMilks = coffeeData.milks.filter(m => m.dairyFree && m.name !== "no milk");

@@ -11,3 +11,5 @@ So I started this generator thinking it would be pretty simple and straight forw
 - iced white mocha with whole milk with 1 pump mocha and sweet cream cold foam
 
 The first drink was just a weird drink, and I removed the option for adding a hot prefix to a drink name. Coffee drinks are usually assumed to be hot anyways so it was okay. For the second drink, I hadn't added the change for removing the hot prefix yet, but I did add another check in to make sure I wasn't adding two different types of milk (in that drink's case it was honey almond milk and soy milk). For the third generated drink, I went back and added grammar rules so that the name would be grammatically correct.
+
+The most surprising thing was how many edge cases came up: things I never would have thought of until i saw them get generated. I also added the hidden drinks (since they were coffee orders that my that my friends have actually done before) as fun little easter eggs.
