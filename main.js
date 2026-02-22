@@ -1,53 +1,73 @@
 // Coffee data
 const coffeeData = {
     types: [
-        // CLASSIC TIER (0-30) - only coffee drinks
-        { name: "drip coffee", typeMin: 0, typeMax: 30, tier: "classic", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
-        { name: "americano", typeMin: 0, typeMax: 30, tier: "classic", category: "coffee", iced: true, baseShots: 2, baseSyrups: 0 },
-        { name: "cold brew", typeMin: 0, typeMax: 30, tier: "classic", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
-        { name: "dark roast", typeMin: 0, typeMax: 30, tier: "classic", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
-        { name: "light roast", typeMin: 0, typeMax: 30, tier: "classic", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
-        { name: "latte", typeMin: 0, typeMax: 30, tier: "classic", category: "coffee", iced: true, baseShots: 1, baseSyrups: 0 },
-        { name: "cappuccino", typeMin: 0, typeMax: 30, tier: "classic", category: "coffee", iced: false, baseShots: 1, baseSyrups: 0 },
-        { name: "espresso", typeMin: 0, typeMax: 30, tier: "classic", category: "coffee", iced: false, baseShots: 1, baseSyrups: 0 },
-        { name: "flat white", typeMin: 0, typeMax: 30, tier: "classic", category: "coffee", iced: true, baseShots: 2, baseSyrups: 0 },
+        // CLASSIC TIER (0-25) - classic espresso-based drinks
+        { name: "cappuccino", typeMin: 0, typeMax: 25, tier: "classic", category: "coffee", iced: true, baseShots: 1, baseSyrups: 0 },
+        { name: "latte", typeMin: 0, typeMax: 25, tier: "classic", category: "coffee", iced: true, baseShots: 1, baseSyrups: 0 },
+        { name: "mocha", typeMin: 0, typeMax: 25, tier: "classic", category: "coffee", iced: true, baseShots: 1, baseSyrups: 1 },
+        { name: "americano", typeMin: 0, typeMax: 25, tier: "classic", category: "coffee", iced: true, baseShots: 2, baseSyrups: 0 },
+        { name: "cafe au lait", typeMin: 0, typeMax: 25, tier: "classic", category: "coffee", iced: true, baseShots: 1, baseSyrups: 0 },
+        { name: "flat white", typeMin: 0, typeMax: 25, tier: "classic", category: "coffee", iced: true, baseShots: 2, baseSyrups: 0 },
+        { name: "cortado", typeMin: 0, typeMax: 25, tier: "classic", category: "coffee", iced: true, baseShots: 2, baseSyrups: 0 },
+        { name: "macchiato", typeMin: 0, typeMax: 25, tier: "classic", category: "coffee", iced: true, baseShots: 1, baseSyrups: 0 },
+        { name: "turkish coffee", typeMin: 0, typeMax: 25, tier: "classic", category: "coffee", iced: false, baseShots: 0, baseSyrups: 0 },
+        { name: "caffe crema", typeMin: 0, typeMax: 25, tier: "classic", category: "coffee", iced: false, baseShots: 1, baseSyrups: 0 },
+        { name: "cafe cubano", typeMin: 0, typeMax: 25, tier: "classic", category: "coffee", iced: true, baseShots: 2, baseSyrups: 2 },
+        { name: "vietnamese coffee", typeMin: 0, typeMax: 25, tier: "classic", category: "coffee", iced: true, baseShots: 2, baseSyrups: 2 },
+        { name: "cafe de olla", typeMin: 0, typeMax: 25, tier: "classic", category: "coffee", iced: false, baseShots: 0, baseSyrups: 2 },
+        { name: "affogato", typeMin: 0, typeMax: 25, tier: "classic", category: "coffee", iced: true, baseShots: 1, baseSyrups: 2 },
+        { name: "einspänner", typeMin: 0, typeMax: 25, tier: "classic", category: "coffee", iced: false, baseShots: 2, baseSyrups: 0 },
         
-        // SPECIALTY TIER (30-60) - signature coffee drinks
-        { name: "white mocha", typeMin: 30, typeMax: 60, tier: "specialty", category: "coffee", iced: true, baseShots: 1, baseSyrups: 1 },
-        { name: "caramel macchiato", typeMin: 30, typeMax: 60, tier: "specialty", category: "coffee", iced: true, baseShots: 1, baseSyrups: 1 },
-        { name: "honey almondmilk flat white", typeMin: 40, typeMax: 60, tier: "specialty", category: "coffee", iced: true, baseShots: 2, baseSyrups: 1 },
-        { name: "cinnamon dolce latte", typeMin: 30, typeMax: 60, tier: "specialty", category: "coffee", iced: true, baseShots: 1, baseSyrups: 1 },
-        { name: "mocha latte", typeMin: 30, typeMax: 60, tier: "specialty", category: "coffee", iced: true, baseShots: 1, baseSyrups: 1 },
+        // BLENDS TIER (25-50) - signature coffee blends
+        { name: "breakfast blend", typeMin: 25, typeMax: 50, tier: "blends", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
+        { name: "belle espresso (klatch)", typeMin: 25, typeMax: 50, tier: "blends", category: "coffee", iced: true, baseShots: 1, baseSyrups: 0 },
+        { name: "counter culture hologram", typeMin: 25, typeMax: 50, tier: "blends", category: "coffee", iced: true, baseShots: 1, baseSyrups: 0 },
+        { name: "french roast blend", typeMin: 25, typeMax: 50, tier: "blends", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
+        { name: "holiday blend", typeMin: 25, typeMax: 50, tier: "blends", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
+        { name: "mocha java blend", typeMin: 25, typeMax: 50, tier: "blends", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
+        { name: "major dickason's blend", typeMin: 25, typeMax: 50, tier: "blends", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
+        { name: "peet's off the grid", typeMin: 25, typeMax: 50, tier: "blends", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
+        { name: "stumptown hair bender", typeMin: 25, typeMax: 50, tier: "blends", category: "coffee", iced: true, baseShots: 1, baseSyrups: 0 },
+        { name: "verve sermon blend", typeMin: 25, typeMax: 50, tier: "blends", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
+        { name: "lavazza super crema", typeMin: 25, typeMax: 50, tier: "blends", category: "coffee", iced: true, baseShots: 1, baseSyrups: 0 },
+        { name: "kicking horse three sisters", typeMin: 25, typeMax: 50, tier: "blends", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
         
-        // PREMIUM TIER (60-85) - single origin
-        { name: "single origin pour-over", typeMin: 60, typeMax: 85, tier: "premium", category: "coffee", iced: false, baseShots: 0, baseSyrups: 0 },
-        { name: "single origin cold brew", typeMin: 60, typeMax: 85, tier: "premium", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
-        { name: "ethiopian yirgacheffe", typeMin: 70, typeMax: 85, tier: "premium", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
-        { name: "colombian geisha", typeMin: 75, typeMax: 85, tier: "premium", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
-        { name: "kenyan AA", typeMin: 65, typeMax: 85, tier: "premium", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0 },
+        // PREMIUM TIER (50-75) - single origin - BLACK ONLY with roast and brew options
+        { name: "ethiopian yirgacheffe", typeMin: 50, typeMax: 75, tier: "premium", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0, blackOnly: true,
+          roasts: ["light", "medium-light"], brewMethods: ["pour-over", "aeropress", "cold brew", "filter"] },
+        { name: "guatemala acatenango", typeMin: 50, typeMax: 75, tier: "premium", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0, blackOnly: true,
+          roasts: ["light", "medium-light"], brewMethods: ["pour-over", "french press", "cold brew"] },
+        { name: "kenya karumandi", typeMin: 50, typeMax: 75, tier: "premium", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0, blackOnly: true,
+          roasts: ["light", "super light"], brewMethods: ["pour-over", "aeropress", "french press"] },
+        { name: "colombian huila", typeMin: 50, typeMax: 75, tier: "premium", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0, blackOnly: true,
+          roasts: ["light", "medium"], brewMethods: ["french press", "pour-over", "auto drip", "aeropress"] },
+        { name: "maui mokka", typeMin: 50, typeMax: 75, tier: "premium", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0, blackOnly: true,
+          roasts: ["medium-light"], brewMethods: ["pour-over", "french press", "aeropress"] },
+        { name: "tanzanian peaberry", typeMin: 50, typeMax: 75, tier: "premium", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0, blackOnly: true,
+          roasts: ["light", "medium"], brewMethods: ["french press", "pour-over", "espresso"] },
+        { name: "jamaican blue mountain", typeMin: 50, typeMax: 75, tier: "premium", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0, blackOnly: true,
+          roasts: ["medium", "light"], brewMethods: ["pour-over", "french press", "drip"] },
+        { name: "colombian geisha", typeMin: 50, typeMax: 75, tier: "premium", category: "coffee", iced: true, baseShots: 0, baseSyrups: 0, blackOnly: true,
+          roasts: ["light", "medium"], brewMethods: ["pour-over", "aeropress"] },
         
-        // UNIQUE TIER (85-100) - curveball
+        // UNIQUE TIER (75-90) - curveball
         // Teas
-        { name: "matcha latte", typeMin: 85, typeMax: 100, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 1 },
-        { name: "chai latte", typeMin: 85, typeMax: 100, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 1 },
-        { name: "london fog", typeMin: 85, typeMax: 100, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 1 },
-        { name: "milk tea", typeMin: 85, typeMax: 100, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 1 },
-        { name: "earl grey tea", typeMin: 85, typeMax: 100, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 0 },
-        { name: "black tea", typeMin: 85, typeMax: 100, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 0 },
-        { name: "oolong tea", typeMin: 85, typeMax: 100, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 0 },
-        { name: "jasmine tea", typeMin: 85, typeMax: 100, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 0 },
+        { name: "matcha latte", typeMin: 75, typeMax: 90, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 1 },
+        { name: "chai latte", typeMin: 75, typeMax: 90, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 1 },
+        { name: "london fog", typeMin: 75, typeMax: 90, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 1 },
+        { name: "milk tea", typeMin: 75, typeMax: 90, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 1 },
+        { name: "earl grey tea", typeMin: 75, typeMax: 90, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 0 },
+        { name: "black tea", typeMin: 75, typeMax: 90, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 0 },
+        { name: "oolong tea", typeMin: 75, typeMax: 90, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 0 },
+        { name: "jasmine tea", typeMin: 75, typeMax: 90, tier: "unique", category: "tea", iced: true, baseShots: 0, baseSyrups: 0 },
         
         // Juices
-        { name: "apple juice", typeMin: 85, typeMax: 100, tier: "unique", category: "juice", iced: true, noMods: true },
-        { name: "orange juice", typeMin: 85, typeMax: 100, tier: "unique", category: "juice", iced: true, noMods: true },
+        { name: "apple juice", typeMin: 75, typeMax: 90, tier: "unique", category: "juice", iced: true, noMods: true },
+        { name: "orange juice", typeMin: 75, typeMax: 90, tier: "unique", category: "juice", iced: true, noMods: true },
         
         // Other
-        { name: "hot chocolate", typeMin: 85, typeMax: 100, tier: "unique", category: "other", iced: false, baseShots: 0, baseSyrups: 2 },
-        { name: "water", typeMin: 85, typeMax: 100, tier: "unique", category: "water", iced: true, noMods: true },
-        
-        // Frappe
-        { name: "coffee frappe", typeMin: 0, typeMax: 100, tier: "frappe", category: "blended", iced: true, blended: true, baseShots: 1, baseSyrups: 2 },
-        { name: "creme frappe", typeMin: 0, typeMax: 100, tier: "frappe", category: "blended", iced: true, blended: true, baseShots: 0, baseSyrups: 2 }
+        { name: "hot chocolate", typeMin: 75, typeMax: 90, tier: "unique", category: "other", iced: false, baseShots: 0, baseSyrups: 2 },
+        { name: "water", typeMin: 75, typeMax: 90, tier: "unique", category: "water", iced: true, noMods: true }
     ],
     
     milks: [
@@ -100,7 +120,7 @@ const coffeeData = {
         {
             name: "Birthday Special",
             description: "Your birthday frappe creation",
-            recipe: "Blended latte with hazelnut, toffee nut, caramel, vanilla, and mocha, 2 shots espresso affogato, topped with whipped cream, caramel and mocha drizzle",
+            recipe: "Blended iced latte with hazelnut, toffee nut, caramel, vanilla, and mocha, 2 shots espresso affogato, topped with whipped cream, caramel and mocha drizzle",
             trigger: { type: "classic", base: "latte", sugar: 4, caffeine: 3, toppings: 3, dairyFree: false, blended: true }
         },
         {
@@ -144,10 +164,12 @@ function updateLabels() {
     const caffeine = parseInt(caffeineSlider.value);
     const toppings = parseInt(toppingsSlider.value);
     
-    if (type < 30) typeValue.textContent = 'classic';
-    else if (type < 60) typeValue.textContent = 'specialty';
-    else if (type < 85) typeValue.textContent = 'premium';
-    else typeValue.textContent = 'unique';
+    // Type text - now with blends instead of specialty
+    if (type < 25) typeValue.textContent = 'classic';
+    else if (type < 50) typeValue.textContent = 'blends';
+    else if (type < 75) typeValue.textContent = 'premium';
+    else if (type < 90) typeValue.textContent = 'unique';
+    else typeValue.textContent = 'wildcard';
     
     const sugarLabels = ['none', 'light', 'medium', 'extra', 'go ham'];
     sugarValue.textContent = sugarLabels[sugar];
@@ -196,9 +218,10 @@ function getToppingCount(toppingsLevel) {
 // Check for hidden drinks
 function checkHiddenDrink(typeVal, baseName, sugar, caffeine, toppings, dairyFree, isBlended) {
     let typeCategory = 'classic';
-    if (typeVal >= 30 && typeVal < 60) typeCategory = 'specialty';
-    else if (typeVal >= 60 && typeVal < 85) typeCategory = 'premium';
-    else if (typeVal >= 85) typeCategory = 'unique';
+    if (typeVal >= 25 && typeVal < 50) typeCategory = 'blends';
+    else if (typeVal >= 50 && typeVal < 75) typeCategory = 'premium';
+    else if (typeVal >= 75 && typeVal < 90) typeCategory = 'unique';
+    else if (typeVal >= 90) typeCategory = 'wildcard';
     
     return coffeeData.hiddenDrinks.find(drink => {
         const t = drink.trigger;
@@ -221,11 +244,17 @@ function generateDrink() {
     const toppingsLevel = parseInt(toppingsSlider.value);
     const dairyFree = dairyFreeCheck.checked;
     
-    const isBlended = Math.random() < 0.05;
-    
-    const eligibleBases = coffeeData.types.filter(base => 
-        typeVal >= base.typeMin && typeVal <= base.typeMax
-    );
+    // For wildcard tier (90-100), select from ALL drinks
+    let eligibleBases;
+    if (typeVal >= 90) {
+        // Wildcard - include everything
+        eligibleBases = coffeeData.types;
+    } else {
+        // Normal filtering by type range
+        eligibleBases = coffeeData.types.filter(base => 
+            typeVal >= base.typeMin && typeVal <= base.typeMax
+        );
+    }
     
     if (eligibleBases.length === 0) {
         orderDisplay.innerHTML = '<p class="placeholder">☕ adjust parameters and generate →</p>';
@@ -252,6 +281,14 @@ function generateDrink() {
         return;
     }
     
+    const isJuice = base.category === 'juice';
+    const isTea = base.category === 'tea';
+    const isCoffee = base.category === 'coffee';
+    
+    // Determine if drink should be iced and/or blended
+    const isIced = !isJuice && Math.random() > 0.4;
+    const isBlended = isIced && Math.random() < 0.15; // 15% chance for iced drinks to be blended
+    
     // Check for hidden drinks
     const hiddenDrink = checkHiddenDrink(
         typeVal, base.name, sugarLevel, caffeineLevel, toppingsLevel, dairyFree, isBlended
@@ -277,25 +314,57 @@ function generateDrink() {
         return;
     }
     
+    // Special handling for premium black-only coffees with roast and brew options
+    if (base.blackOnly) {
+        // Select random roast level from available options
+        const roastLevel = base.roasts ? base.roasts[Math.floor(Math.random() * base.roasts.length)] : "light";
+        
+        // Select random brew method from available options
+        const brewMethod = base.brewMethods ? base.brewMethods[Math.floor(Math.random() * base.brewMethods.length)] : "pour-over";
+        
+        // Build the premium drink name - simplified!
+        let premiumDrinkName = `${roastLevel} roast ${base.name} ${brewMethod}`;
+        
+        // Add temperature if iced (cold brew is already cold, so this handles that)
+        if (isIced && !brewMethod.includes("cold brew")) {
+            premiumDrinkName = `iced ${premiumDrinkName}`;
+        }
+        
+        orderDisplay.innerHTML = `<p>☕ ${premiumDrinkName}</p>`;
+        
+        const orderItem = {
+            text: premiumDrinkName,
+            time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        };
+        
+        history.unshift(orderItem);
+        if (history.length > 8) history.pop();
+        updateHistory();
+        return;
+    }
+    
     // Regular drink generation
     let orderParts = [];
-    
-    const isJuice = base.category === 'juice';
-    const isTea = base.category === 'tea';
-    const isCoffee = base.category === 'coffee';
-    const isBlendedDrink = base.category === 'blended' || isBlended;
     
     // Temperature logic
     if (isJuice) {
         orderParts.push(`${base.name}`);
     } else if (isTea) {
-        const isIced = Math.random() > 0.5;
-        orderParts.push(isIced ? `iced ${base.name}` : `${base.name}`);
-    } else if (isBlendedDrink) {
-        orderParts.push(`blended ${base.name}`);
+        const teaIsIced = Math.random() > 0.5;
+        if (teaIsIced) {
+            orderParts.push(`iced ${base.name}`);
+        } else {
+            orderParts.push(`${base.name}`);
+        }
     } else {
-        const isIced = Math.random() > 0.4;
-        orderParts.push(isIced ? `iced ${base.name}` : `${base.name}`);
+        // Coffee drinks
+        if (isBlended) {
+            orderParts.push(`blended iced ${base.name}`);
+        } else if (isIced) {
+            orderParts.push(`iced ${base.name}`);
+        } else {
+            orderParts.push(`${base.name}`);
+        }
     }
     
     // Skip modifiers for juice
@@ -315,13 +384,15 @@ function generateDrink() {
     }
     
     // Add milk
-    if ((isCoffee || isTea) && !isBlendedDrink && Math.random() > 0.3) {
+    if ((isCoffee || isTea) && !isBlended && Math.random() > 0.3) {
         const hasMilkInName = 
             base.name.includes("milk") || 
             base.name.includes("almondmilk") || 
             base.name.includes("latte") ||
             base.name.includes("flat white") ||
-            base.name.includes("cappuccino");
+            base.name.includes("cappuccino") ||
+            base.name.includes("cortado") ||
+            base.name.includes("macchiato");
         
         if (!hasMilkInName) {
             const eligibleMilks = coffeeData.milks.filter(m => !dairyFree || m.dairyFree);
@@ -335,7 +406,9 @@ function generateDrink() {
                 (base.name.includes("milk") && !base.name.includes("almond") && !base.name.includes("oat") && !base.name.includes("soy") && !base.name.includes("coconut")) ||
                 base.name.includes("latte") ||
                 base.name.includes("flat white") ||
-                base.name.includes("cappuccino");
+                base.name.includes("cappuccino") ||
+                base.name.includes("cortado") ||
+                base.name.includes("macchiato");
             
             if (baseHasDairyMilk) {
                 const dairyFreeMilks = coffeeData.milks.filter(m => m.dairyFree && m.name !== "no milk");
